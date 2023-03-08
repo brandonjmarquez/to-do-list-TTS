@@ -13,8 +13,11 @@ function addRow(table, taskText, categoryText) {
   categoryInput.value = categoryText;
   taskInput.disabled = true;
   categoryInput.disabled = true;
+  taskInput.classList.add('task-input')
+  categoryInput.classList.add('task-input')
   task.appendChild(taskInput);
   category.appendChild(categoryInput)
+
 
   completedCheckbox.type = 'checkbox';
   editButton.type = 'button';
@@ -83,9 +86,13 @@ function editTask(e) {
   if(taskInput.disabled) {
     taskInput.disabled = false;
     categoryInput.disabled = false;
+    taskInput.classList.toggle('task-input')
+    categoryInput.classList.toggle('task-input')
   } else {
     taskInput.disabled = true;
     categoryInput.disabled = true;
+    taskInput.classList.toggle('task-input')
+    categoryInput.classList.toggle('task-input')
   }
   
 
