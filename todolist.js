@@ -66,8 +66,8 @@ function removeRow(e) {
 function markAsComplete(e) {
   console.log(e.target.type)
   if(e.target.tagName === 'INPUT' && e.target.type === 'checkbox') {
-    let task = e.target.parentElement.nextElementSibling;
-    let category = task.nextElementSibling;
+    let task = e.target.parentElement.nextElementSibling.querySelector('input');
+    let category = e.target.parentElement.nextElementSibling.nextElementSibling.querySelector('input');
 
     task.classList.toggle('completed');
     category.classList.toggle('completed');

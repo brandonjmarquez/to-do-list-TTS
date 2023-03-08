@@ -20,7 +20,7 @@ img{
     opacity: .2;
 }
 
-tr.todo-row:hover {
+.todo-row:hover input {
     /* text-decoration: line-through; */
     color: red;
 }
