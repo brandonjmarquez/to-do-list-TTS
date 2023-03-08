@@ -1,21 +1,21 @@
 function addRow(table, taskText, categoryText) {
-  let row = document.createElement('tr')
-  let completed = document.createElement('td')
-  let completedCheckbox = document.createElement('input')
-  let task = document.createElement('td')
-  let category = document.createElement('td')
+  let row = document.createElement('tr');
+  let completed = document.createElement('td');
+  let completedCheckbox = document.createElement('input');
+  let task = document.createElement('td');
+  let category = document.createElement('td');
 
   completedCheckbox.type = 'checkbox';
   task.innerText = taskText;
   category.innerText = categoryText;
   completed.appendChild(completedCheckbox);
-  // task.classList.add('todo-text');
-  // category.classList.add('todo-text');
+  completed.classList.add('checkbox-container');
+  category.classList.add('todo-text');
   row.classList.add('todo-row');
   row.appendChild(completed);
   row.appendChild(task);
   row.appendChild(category);
-  table.querySelector('tbody').appendChild(row)
+  table.querySelector('tbody').appendChild(row);
 }
 
 function addToDo() {
@@ -50,8 +50,14 @@ function removeRow(e) {
 function markAsComplete(e) {
   console.log(e.target.type)
   if(e.target.tagName === 'INPUT' && e.target.type === 'checkbox') {
-    console.log(e.target.type)
-    
+    console.log(e.target)
+    console.log(e.target.parentElement)
+    console.log(e.target.parentElement.nextElementSibling)
+    let task = e.target.parentElement.nextElementSibling;
+    let category = task.nextElementSibling;
+
+    task.classList.toggle('completed');
+    category.classList.toggle('completed');
   }
 }
 
