@@ -8,6 +8,7 @@ tfoot {
     background-color: #333;
     color: #fff;
 }
-table:hover {
-    opacity: blue .5;
+tr.todo-row:hover {
+    text-decoration: line-through;
+    color: red
 }
